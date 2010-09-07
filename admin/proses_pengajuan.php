@@ -10,7 +10,7 @@ $sat_brg_pgj		= $_POST['status_brg_pgj'];
 
 
 
-$input		= mysqli_query($connect, "INSERT INTO barang (nm_brg_pgj, nm_kantor_pgj, jml_brg_pgj, sat_brg_pgj, hrg_brg_pgj, tot_hrg_pgj, status_brg_pgj) VALUES ('$nm_brg_pgj', '$nm_kantor_pgj', 
+$input		= mysqli_query($connect, "INSERT INTO pengajuan_brg (nm_brg_pgj, nm_kantor_pgj, jml_brg_pgj, sat_brg_pgj, hrg_brg_pgj, tot_hrg_pgj, status_brg_pgj) VALUES ('$nm_brg_pgj', '$nm_kantor_pgj', 
 	'$jml_brg_pgj' , '$sat_brg_pgj' , '$hrg_brg_pgj','$tot_hrg_pgj', '$status_brg_pgj')");
 
 if($input){
