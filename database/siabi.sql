@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.8.5
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 14, 2019 at 03:39 AM
--- Server version: 10.1.13-MariaDB
--- PHP Version: 5.6.23
+-- Waktu pembuatan: 01 Nov 2019 pada 13.47
+-- Versi server: 10.1.38-MariaDB
+-- Versi PHP: 7.1.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -23,13 +25,13 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `barang`
+-- Struktur dari tabel `barang`
 --
 
 CREATE TABLE `barang` (
   `id_brg` int(5) NOT NULL,
   `kode_brg` varchar(5) NOT NULL,
-  `tgl_msk` date NOT NULL,
+  `tgl_msk` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `nm_brg` varchar(50) NOT NULL,
   `nm_kantor` varchar(100) NOT NULL,
   `jml_brg` int(100) NOT NULL,
@@ -40,22 +42,33 @@ CREATE TABLE `barang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `barang`
+-- Dumping data untuk tabel `barang`
 --
 
 INSERT INTO `barang` (`id_brg`, `kode_brg`, `tgl_msk`, `nm_brg`, `nm_kantor`, `jml_brg`, `sat_brg`, `tot_hrg`, `hrg_brg`, `status_brg`) VALUES
-(4, 'AO18', '0000-00-00', 'Kompor', 'Kantor Kas Gang Besen', 5, '', 0, 1900000, 'Penyusutan'),
-(5, 'BP30', '0000-00-00', 'Printer', '', 2, '', 0, 1000000, 'ya'),
-(7, 'KOP89', '2019-06-29', 'kursi', 'mijen', 70, '', 0, 90000, 'aktif'),
-(8, 'KOP89', '2019-06-12', 'ac', 'smg4', 90, '', 0, 80000, 'aktif'),
-(13, 'A0123', '2019-10-10', 'HP', 'Kantor Pusat Semarang', 9, 'unit', 0, 100000, ''),
-(14, 'lk0', '2019-10-24', 'hp', 'smg walter mangonsidi', 900, 'pack', 0, 8000, 'Aktif'),
-(15, 'KP8', '2019-10-18', 'Pulpen', 'kds1 cbg kudus', 100, 'pcs', 350000, 3500, 'Aktif');
+(4, 'AO18', '0000-00-00 00:00:00', 'Kompor', 'Kantor Kas Gang Besen', 5, '', 0, 1900000, 'Penyusutan'),
+(7, 'KOP89', '2019-06-28 17:00:00', 'kursi', 'mijen', 70, '', 0, 90000, 'aktif'),
+(14, 'lk0', '2019-10-23 17:00:00', 'hp', 'smg walter mangonsidi', 900, 'pack', 0, 8000, 'Aktif'),
+(15, 'KP8', '2019-10-17 17:00:00', 'Pulpen', 'kds1 cbg kudus', 100, 'pcs', 350000, 3500, 'Aktif'),
+(16, 'AH254', '2019-10-24 17:00:00', 'ff', 'Kantor Kas Cepiring', 6, 'pcs', 36000, 6000, 'Aktif'),
+(17, 'A205', '2019-10-31 16:48:30', 'hhhhg', 'Kantor Kas Ngaliyan', 2, 'pcs', 10000, 5000, 'Aktif');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `login`
+-- Struktur dari tabel `kode`
+--
+
+CREATE TABLE `kode` (
+  `id` int(11) NOT NULL,
+  `kode_brg` varchar(20) NOT NULL,
+  `nm_brg` int(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `login`
 --
 
 CREATE TABLE `login` (
@@ -66,7 +79,7 @@ CREATE TABLE `login` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `login`
+-- Dumping data untuk tabel `login`
 --
 
 INSERT INTO `login` (`id_login`, `username`, `password`, `level`) VALUES
@@ -76,72 +89,87 @@ INSERT INTO `login` (`id_login`, `username`, `password`, `level`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pengajuan_brg`
+-- Struktur dari tabel `pengajuan_brg`
 --
 
 CREATE TABLE `pengajuan_brg` (
   `id_pengajuan` int(5) NOT NULL,
-  `tgl_pengajuan` date NOT NULL,
-  `nm_brg` varchar(50) NOT NULL,
-  `nm_kantor` varchar(50) NOT NULL,
-  `jml_brg` int(100) NOT NULL,
-  `sat_brg` varchar(100) NOT NULL,
-  `hrg_brg` int(20) NOT NULL,
-  `tot_hrg` int(100) NOT NULL,
-  `ket` text NOT NULL
+  `tgl_pengajuan` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `nm_brg_pgj` varchar(50) NOT NULL,
+  `nm_kantor_pgj` varchar(50) NOT NULL,
+  `jml_brg_pgj` int(100) NOT NULL,
+  `sat_brg_pgj` varchar(100) NOT NULL,
+  `hrg_brg_pgj` int(20) NOT NULL,
+  `tot_hrg_pgj` int(100) NOT NULL,
+  `ket_pgj` text NOT NULL,
+  `notif_pgj` varchar(100) NOT NULL DEFAULT 'prosess'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `pengajuan_brg`
+-- Dumping data untuk tabel `pengajuan_brg`
 --
 
-INSERT INTO `pengajuan_brg` (`id_pengajuan`, `tgl_pengajuan`, `nm_brg`, `nm_kantor`, `jml_brg`, `sat_brg`, `hrg_brg`, `tot_hrg`, `ket`) VALUES
-(1, '2019-06-08', 'Kipas angin kosmos', '', 3, '0', 800000, 0, 'untuk kantor pusat'),
-(2, '0000-00-00', 'kjkjhka', 'smg ketileng', 4, '0', 80000, 0, ''),
-(6, '2019-06-06', 'laptop', 'smg ketileng', 8, '0', 9000000, 0, ''),
-(7, '2019-10-14', 'Pulpen', 'Kantor kas Kudus', 100, 'pack', 2000, 200000, 'edisi terbaru');
+INSERT INTO `pengajuan_brg` (`id_pengajuan`, `tgl_pengajuan`, `nm_brg_pgj`, `nm_kantor_pgj`, `jml_brg_pgj`, `sat_brg_pgj`, `hrg_brg_pgj`, `tot_hrg_pgj`, `ket_pgj`, `notif_pgj`) VALUES
+(7, '2019-10-13 17:00:00', 'Pulpen', 'Kantor kas Kudus', 100, 'pack', 2000, 200000, 'edisi terbaru', ''),
+(8, '2019-11-01 11:20:23', '', '', 0, '', 0, 0, '', '');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `barang`
+-- Indeks untuk tabel `barang`
 --
 ALTER TABLE `barang`
   ADD PRIMARY KEY (`id_brg`);
 
 --
--- Indexes for table `login`
+-- Indeks untuk tabel `kode`
+--
+ALTER TABLE `kode`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `login`
 --
 ALTER TABLE `login`
   ADD PRIMARY KEY (`id_login`);
 
 --
--- Indexes for table `pengajuan_brg`
+-- Indeks untuk tabel `pengajuan_brg`
 --
 ALTER TABLE `pengajuan_brg`
   ADD PRIMARY KEY (`id_pengajuan`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `barang`
+-- AUTO_INCREMENT untuk tabel `barang`
 --
 ALTER TABLE `barang`
-  MODIFY `id_brg` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_brg` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
 --
--- AUTO_INCREMENT for table `login`
+-- AUTO_INCREMENT untuk tabel `kode`
+--
+ALTER TABLE `kode`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT untuk tabel `login`
 --
 ALTER TABLE `login`
   MODIFY `id_login` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
--- AUTO_INCREMENT for table `pengajuan_brg`
+-- AUTO_INCREMENT untuk tabel `pengajuan_brg`
 --
 ALTER TABLE `pengajuan_brg`
-  MODIFY `id_pengajuan` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_pengajuan` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

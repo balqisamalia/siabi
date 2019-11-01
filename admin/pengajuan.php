@@ -105,7 +105,7 @@
 									<div class="form-group">
 								<div class="modal-footer">
 									<a href="#" class="btn btn-warning" onclick="history.back(-1)"><i class="glyphicon glyphicon-arrow-left"></i> Kembali</a>
-									<a href="proses_pengajuan.php" type="submit" name="input" value="input" class="btn btn-primary"><i class="glyphicon glyphicon-arrow-right"></i> Ajukan</a>
+									<a href="proses_pengajuan.php" type="submit" name="input" value="input" class="btn btn-primary"><i class="glyphicon glyphicon-arrow-right"></i> Submit</a>
 								</div>
 							</form>
 						</div>
