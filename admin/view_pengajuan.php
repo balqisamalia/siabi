@@ -14,13 +14,13 @@
 				$re = mysqli_query($connect,$sql);
 				while($data=mysqli_fetch_array($re))
 				{
-					$tgl_pengajuan = $data['tgl_pengajuan'];
-					$nm_brg = $data['nm_brg_pgj'];
-					$nm_kantor = $data['nm_kantor_pgj'];
-					$jml_brg = $data['jml_brg_pgj'];
-					$sat_brg = $data['sat_brg_pgj'];
-					$tot_hrg = $data['tot_hrg_pgj'];
-					$ket = $data['ket_pgj'];
+					$tgl_pengajuan 		= $data['tgl_pengajuan'];
+					$nm_brg_pgj 		= $data['nm_brg_pgj'];
+					$nm_kantor_pgj 		= $data['nm_kantor_pgj'];
+					$jml_brg_pgj 		= $data['jml_brg_pgj'];
+					$sat_brg_pgj 		= $data['sat_brg_pgj'];
+					$tot_hrg_pgj 		= $data['tot_hrg_pgj'];
+					$ket_pgj 			= $data['ket_pgj'];
 				}	
 		
 	}
@@ -47,7 +47,7 @@
 							<table class="table table-stripped" width="100%">
 									<tr>
                                             <th>Nama Barang</th>
-                                            <td><?php echo $nm_brg; ?> </td>
+                                            <td><?php echo $nm_brg_pgj; ?> </td>
                                     </tr>
 
 									<tr>
@@ -56,19 +56,19 @@
                                     </tr>
                                     <tr>
                                     		<th>Kantor</th>
-                                            <td><?php echo $nm_kantor; ?> </td>
+                                            <td><?php echo $nm_kantor_pgj; ?> </td>
                                     </tr>
                                     <tr>
                                     		<th>Jumlah</th>
-                                            <td><?php echo $jml_brg; ?> / <?php echo $sat_brg; ?> </td>
+                                            <td><?php echo $jml_brg_pgj; ?> / <?php echo $sat_brg_pgj; ?> </td>
                                     </tr>    
                                     <tr>
                                     		<th>Total Harga</th>
-                                            <td><b>Rp</b> <?php echo $tot_hrg; ?> </td>
+                                            <td><b>Rp</b> <?php echo $tot_hrg_pgj; ?> </td>
                                     </tr>
                                      <tr>
                                     		<th>Keterangan</th>
-                                            <td><?php echo $ket; ?> </td>
+                                            <td><?php echo $ket_pgj; ?> </td>
                                     </tr>
                                     <th>
                                     
@@ -89,7 +89,7 @@
 								
 								<script>
 									function print_data(){
-										window.open("../admin/cetak.php","_blank");
+										window.open("cetak.php","_blank");
 									}
 								</script>
                                     </th>
