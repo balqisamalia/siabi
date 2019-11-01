@@ -7,7 +7,6 @@ if(isset($_POST['update']))
 $id_brg = $_POST['id_brg'];
 
 $kode_brg	= $_POST['kode_brg'];
-$tgl_msk 	= $_POST['tgl_msk'];
 $nm_brg		= $_POST['nm_brg'];
 $nm_kantor	= $_POST['nm_kantor'];
 $jml_brg	= $_POST['jml_brg'];
@@ -15,7 +14,7 @@ $hrg_brg	= $_POST['hrg_brg'];
 $tot_hrg	= $_POST['tot_hrg'];
 $status_brg	= $_POST['status_brg'];
 
-$result	= mysqli_query($connect, "UPDATE barang SET kode_brg = '$kode_brg', tgl_msk = '$tgl_msk', nm_brg = '$nm_brg', nm_kantor = '$nm_kantor',jml_brg = '$jml_brg', hrg_brg = '$hrg_brg' , tot_hrg = '$tot_hrg' , status_brg = '$status_brg' WHERE id_brg = $id_brg");
+$result	= mysqli_query($connect, "UPDATE barang SET kode_brg = '$kode_brg', nm_brg = '$nm_brg', nm_kantor = '$nm_kantor',jml_brg = '$jml_brg', hrg_brg = '$hrg_brg' , tot_hrg = '$tot_hrg' , status_brg = '$status_brg' WHERE id_brg = $id_brg");
 
 header("Location: index_data.php");
 }
@@ -31,7 +30,6 @@ $result	= mysqli_query($connect, "SELECT * FROM barang WHERE id_brg = '$id_brg'"
 while($data = mysqli_fetch_array($result)) 
 {
 	$kode_brg	= $data['kode_brg'];
-	$tgl_msk 	= $data['tgl_msk'];
 	$nm_brg		= $data['nm_brg'];
 	$nm_kantor	= $data['nm_kantor'];
 	$jml_brg	= $data['jml_brg'];
@@ -68,10 +66,6 @@ while($data = mysqli_fetch_array($result))
 								<div class="form-group">
 									<label class="title">Kode Barang</label>
 									<input type="text" name="kode_brg" class="form-control" value=<?php echo $kode_brg;?>>
-								</div>
-								<div class="form-group">
-									<label class="title">Tanggal</label>
-									<input type="Date" name="tgl_msk" class="form-control" value=<?php echo $tgl_msk;?>>
 								</div>
 								<div class="form-group">
 									<label class="title">Nama Barang</label>

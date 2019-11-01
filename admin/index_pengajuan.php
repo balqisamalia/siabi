@@ -32,7 +32,7 @@
 					<input type="search" name="cari" placeholder="Nama Barang" >
 					<button action="proses_search.php" type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-search" value="Cari"  ></i> Cari</button>
  				</form>
- 				<a href="../admin/pengajuan.php" class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i> Pengajuan</a>
+ 				<a href="pengajuan.php" class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i> Pengajuan</a>
 					<br>
 					<br>
 					<div class="panel panel-default">
@@ -49,7 +49,7 @@
 										<th>Kantor</th>
 										<th>Jumlah</th>
 										<th>Total Harga</th>
-										<th>Opsi</th>
+										<th>Notifikasi</th>
 									</tr>
 								</thead>
 								<?php
@@ -65,11 +65,12 @@
 								<tbody>
 									<tr>
 										<td><?php echo $no;?></td>
-										<td><?php echo $data['tgl_pengajuan']?></td>
+										<td><?php echo date("d/m/Y", strtotime($data['tgl_pengajuan']))?></td>
 										<td><?php echo $data['nm_brg_pgj']?></td>
 										<td><?php echo $data['nm_kantor_pgj']?></td>
 										<td><?php echo $data['jml_brg_pgj']?></td>
 										<td><?php echo $data['tot_hrg_pgj']?></td>
+										<td><?php echo $data['notif_pgj']?></td>
 										<td>
 											 <script type="text/javascript">
 											 	function cek(){
@@ -81,9 +82,8 @@
 											 	}
 											 }
 											</script>
-											<a href="../hrd/view_pengajuan.php?id_pengajuan=<?php echo $data['id_pengajuan']?>" class="btn btn-info btn-xs"><i "></i>View </a>
-											<a href="view_pengajuan.php?id_pengajuan=<?php echo $data['id_pengajuan']?>" onclick="cek();" class="btn btn-info btn-xs"><i "></i>Konfirmasi </a>
-											<a href="../hrd/hapus_pengajuan.php?id_pengajuan=<?php echo $data['id_pengajuan']?>" class="btn btn-danger btn-xs"><i class="glyphicon "></i> Tolak</a>
+											<!--a href="view_pengajuan.php?id_pengajuan=<?php //echo $data['id_pengajuan']?>" class="btn btn-info btn-xs"><i "></i>View </a-->
+											
 										</td>
 									</tr>
 								</tbody>

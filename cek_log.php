@@ -12,7 +12,7 @@ if($result>0){
 	    $_SESSION['username'] = $data['username'];
 	    // $data['level'] level digunaan untu memanggil value level dari username yang telah login dan disimpan dalam $_SESSION['level']
 	    $_SESSION['level'] 	  = $data['level'];
-	    echo "<script>alert('Selamat Datang, HRD.');document.location.href='admin/index_pengajuan.php'</script>";
+	    echo "<script>alert('Selamat Datang, HRD.');document.location.href='hrd/index_pengajuan_hrd.php'</script>";
 
 	}elseif($data['level'] == 'admin'){
 	    session_start();

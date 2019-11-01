@@ -14,7 +14,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav">
                 <li ><a href="index_data.php">Data Barang <span class="sr-only">(current)</span></a></li>
-                <li class="active"><a href="index_pengajuan.php">Pengajuan</a></li>
+                <li class="active"><a href="index_pengajuan.php">Data Pengajuan</a></li>
                 <li><a href="../logout.php">Logout</a></li>
                 <li></li>
               </ul>
@@ -33,10 +33,6 @@
 						</div>
 						<div class="panel-body">
 							<form action="proses_pengajuan.php" method="POST" class="form">
-								<div class="form-group">
-									<label class="title">Tanggal Pengajuan</label>
-									<input type="date" name="tgl_pengajuan" class="form-control" required>
-								</div>
 								<div class="form-group">
 									<label class="title">Nama Barang</label>
 									<input type="text" name="nm_brg_pgj" class="form-control" placeholder="Nama Barang" required>
@@ -109,7 +105,7 @@
 									<div class="form-group">
 								<div class="modal-footer">
 									<a href="#" class="btn btn-warning" onclick="history.back(-1)"><i class="glyphicon glyphicon-arrow-left"></i> Kembali</a>
-									<a href="../hrd/proses_pengajuan.php" type="submit" name="input" value="input" class="btn btn-primary"><i class="glyphicon glyphicon-arrow-right"></i> Ajukan</a>
+									<a href="proses_pengajuan.php" type="submit" name="input" value="input" class="btn btn-primary"><i class="glyphicon glyphicon-arrow-right"></i> Ajukan</a>
 								</div>
 							</form>
 						</div>

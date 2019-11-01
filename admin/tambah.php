@@ -43,10 +43,7 @@
 									<label class="title">Kode Barang</label>
 									<input type="text" name="kode_brg" class="form-control" placeholder="BP10" required>
 								</div>
-								<div class="form-group">
-									<label class="title">Tanggal Masuk</label>
-									<input type="date" name="tgl_msk" class="form-control" required>
-								</div>
+							
 
 								<div class="form-group">
 									<label class="title">Nama Barang</label>

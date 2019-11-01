@@ -14,15 +14,15 @@
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav">
-                <li class="active"><a href="index_data.php">Data Barang <span class="sr-only">(current)</span></a></li>
-                <li><a href="index_pengajuan.php">Data Pengajuan</a></li>
+                <li class="active"><a href="index_barang_hrd.php">Data Barang <span class="sr-only">(current)</span></a></li>
+                <li><a href="index_pengajuan_hrd.php">Data Pengajuan</a></li>
                 <li><a href="../logout.php">Logout</a></li>
                 <li></li>
               </ul>
             </div>
           </div>
         </nav> 
-        <!-- Tabel List Data -->
+        <!-- Tabel List Data -->s
 	<div class="row">
 		<div class="container-fuild">
 				<div class="col-md-9 col-md-offset-2">
@@ -30,7 +30,6 @@
 					<input type="search" name="cari" placeholder="Nama Barang" >
 					<button action="proses_search.php" type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-search" value="Cari"  ></i> Cari</button>
  				</form>
-				<a href="tambah.php" class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i> Tambah</a>
 				<br>
 					<br><div class="panel panel-default">
 						<div class="panel-heading">
@@ -72,9 +71,7 @@
 										<td><?php echo $data['tot_hrg']?></td>
 										<td><?php echo $data['status_brg']?></td>
 										<td>
-											<a href="view_barang.php?id_brg=<?php echo $data['id_brg']?>" class="btn btn-info btn-xs"><i "></i>View </a>
-											<a href="edit.php?id_brg=<?php echo $data['id_brg']?>" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-pencil"></i> Edit</a>
-											<a href="proses_hapus.php?id_brg=<?php echo $data['id_brg']?>" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-erase"></i> Hapus</a>
+											<a href="../admin/view_barang.php?id_brg=<?php echo $data['id_brg']?>" class="btn btn-info btn-xs"><i "></i>View </a>
 										</td>
 									</tr>
 								</tbody>
