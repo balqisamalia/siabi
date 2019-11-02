@@ -41,92 +41,78 @@
 							<form action="proses_tambah.php" method="POST" class="form">
 								<div class="form-group">
 									<label class="title">Kode Barang</label>
-									<input type="text" name="kode_brg" class="form-control" placeholder="BP10" required>
+									<input type="text" name="kode_brg" class="form-control" placeholder="BP10">
 								</div>
-							
+								<div class="form-group">
+									<label class="title">Tanggal</label>
+									<input type="date" name="tgl_msk" class="form-control">
+								</div>
 
 								<div class="form-group">
 									<label class="title">Nama Barang</label>
-									<input type="text" name="nm_brg" class="form-control" placeholder="Nama Barang" required>
-								</div>		
+									<input type="text" name="nm_brg" class="form-control" placeholder="Nama Barang">
+								</div>
 								<div class="form-group">
 									<label class="title">Kantor</label>
-									<select data-placeholder="Nama Kantor.." name="nm_kantor" class="form-control" required>
+									<select data-placeholder="Nama Kantor.." name="nm_kantor" class="form-control">
 										<option>-- Kantor Semarang --</option>
-                						<option value="Kantor Pusat Semarang">Kantor Pusat Semarang</option>
-            							<option value="Kantor Kas Siliwangi">Kantor Kas Siliwangi</option>
-            							<option value="Kantor Kas Banyumanik">Kantor Kas Banyumanik</option>
-            							<option value="Kantor Kas Gang Besen">Kantor Kas Gang Besen</option>
-            							<option value="Kantor Kas Kelud">Kantor Kas Kelud</option>
-            							<option value="Kantor Kas Ngaliyan">Kantor Kas Ngaliyan</option>               
-            							<option value="Kantor Kas Ketileng">Kantor Kas Ketileng</option>
-            							<option value="Kantor Kas Walter Mangonsidi">Kantor Kas Walter Mangonsidi</option>
-            							<option value="Kantor Kas Tlogosari">Kantor Kas Tlogosari</option>
+                						<option value="smg pusat">Kantor Pusat Semarang</option>
+                						<option value="smg siliwangi">Kantor Kas Siliwangi</option>
+		                				<option value="smg banyumanik">Kantor Kas Banyumanik</option>
+		                				<option value="smg gang besen">Kantor Kas Gang Besen</option>
+		                				<option value="smg kelud">Kantor Kas Kelud</option>
+		                				<option value="smg mijen">Kantor Kas Mijen</option>
+		                				<option value="smg ngaliyan">Kantor Kas Ngaliyan</option>
+		                				<option value="smg ketileng">Kantor Kas Ketileng</option>                	
+		                				<option value="smg walter mangonsidi">Kantor Kas Walter Mangonsidi</option>
+		                				<option value="smg tlogosari">Kantor Kas Tlogosari</option>
 		                				<option>-- Kantor Kendal --</option>
-		                				<option value="Kantor Cabang Kendal">Kantor Cabang Kendal</option>
-		                				<option value="Kantor Kas Cepiring">Kantor Kas Cepiring</option>
-		                				<option value="Kantor Kas Pangadon">Kantor Kas Pengadon</option>
-		                				<option value="Kantor Kas Kaliwungu">Kantor Kas Kaliwungu</option>
+		                				<option value="kdl kendal">Kantor Cabang Kendal</option>
+		                				<option value="kdl cepiring">Kantor Kas Cepiring</option>
+		                				<option value="kdl pangadon">Kantor Kas Pengadon</option>
+		                				<option value="kdl kaliwungu">Kantor Kas Kaliwungu</option>
 		                				<option>-- Kantor Weleri --</option>
-		                				<option value="Kantor Cabang Weleri">Kantor Cabang Weleri</option>
+		                				<option value="wrl1 cbg weleri">Kantor Cabang Weleri</option>
 		                				<option>-- Kantor Kudus --</option>
-		                				<option value="Kantor cabang Kudus">Kantor Cabang Kudus</option>
-		                				<option value="Kantor kas Kudus">Kantor Kas Kudus</option>
-		                				<option value="Kantor Kas Jekulo">Kantor Kas Jekulo</option>
+		                				<option value="kds1 cbg kudus">Kantor Cabang Kudus</option>
+		                				<option value="kds2 kas kudus">Kantor Kas Kudus</option>
+		                				<option value="kds3 jekulo">Kantor Kas Jekulo</option>
 		                				<option>-- Kantor Surakarta --</option>
-		                				<option value="Kantor cabang Surakarta">Kantor Cabang Surakarta</option>
-		                				<option value="Kantor Kas Pajang">Kantor Kas Surakarta (Pajang)</option>
-		                				<option value="Kantor Kas Nusukan">Kantor Kas Surakarta (Nusukan)</option>
+		                				<option value="skt1 cbg surakarta">Kantor Cabang Surakarta</option>
+		                				<option value="skt2 pajang">Kantor Kas Surakarta (Pajang)</option>
+		                				<option value="skt3 nusukan">Kantor Kas Surakarta (Nusukan)</option>
 		                				<option>-- Kantor Klaten --</option>
-		                				<option value="Kantor Cabang klaten">Kantor Cabang Klaten</option>
+		                				<option value="klt1 cbg klaten">Kantor Cabang Klaten</option>
 		                				<option>-- Kantor Sragen --</option>
-		                				<option value="Kantor Cabang Sragen">Kantor Cabang Sragen</option>
+		                				<option value="srg1 cbg sragen">Kantor Cabang Sragen</option>
 		                				<option>-- Kantor Tegal --</option>
-		                				<option value="Kantor Cabang Tegal">Kantor Cabang Tegal</option>
+		                				<option value="tgl1 cbg tegal">Kantor Cabang Tegal</option>
 											</select>
 										</div>
 								<div class="form-group">
 									<label class="title">Jumlah Barang</label>
-									<input type="text" name="jml_brg" class="form-control" required></input>
+									<input type="text" name="jml_brg" class="form-control"></input>
 								</div>
 								<div class="form-group">
-									<label>Satuan </label>
-										<div class="radio">
-											<label>
-												<input type="radio" name="sat_brg" value="pcs" checked >Pcs
-											</label>
-										</div>
-										<div class="radio">
-											<label>
-												<input type="radio" name="sat_brg" value="pack">Pack
-											</label>
-	                                     </div>
-										<div class="radio">
-											<label>
-												<input type="radio" name="sat_brg" value="unit">Unit
-											</label>
-	                                     </div>
-	                                     </div>
-								<div class="form-group">
 									<label class="title">Harga Barang</label>
-									<input type="number" name="hrg_brg" class="form-control" placeholder="50000" required>
-								</div> 
+									<input type="number" name="hrg_brg" class="form-control" placeholder="50000">
+								</div>  
 								<div class="form-group">
 									<label>Status </label>
-										<div class="radio">
-											<label>
-												<input type="radio" name="status_brg" value="Aktif" checked>Aktif
-											</label>
-										</div>
-										<div class="radio">
-											<label>
-												<input type="radio" name="status_brg" value="Penyusutan">Penyusutan
-											</label>
-	                                     </div>
-	                                     </div>
+									<div class="radio">
+										<label>
+											<input type="radio" name="status_brg" value="Aktif" checked>Aktif
+										</label>
+									</div>
+									<div class="radio">
+										<label>
+											<input type="radio" name="status_brg" value="Penyusutan">Penyusutan
+										</label>
+                                     </div>
+                                     </div>
 								<div class="modal-footer">
 									<a href="#" class="btn btn-warning" onclick="history.back(-1)"><i class="glyphicon glyphicon-arrow-left"></i> Kembali</a>
-									<button type="submit" name="input" value="input"class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i> Tambah</button>
+									<button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i> Tambah</button>
 								</div>
 							</form>
 						</div>
@@ -135,6 +121,5 @@
 			</div>
 		</div>
 	</div>
-	
 </body>
 </html>
