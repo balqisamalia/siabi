@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 03 Nov 2019 pada 02.39
+-- Waktu pembuatan: 03 Nov 2019 pada 04.20
 -- Versi server: 10.1.37-MariaDB
 -- Versi PHP: 7.3.1
 
@@ -46,9 +46,6 @@ CREATE TABLE `barang` (
 --
 
 INSERT INTO `barang` (`id_brg`, `kode_brg`, `tgl_msk`, `nm_brg`, `nm_kantor`, `jml_brg`, `sat_brg`, `tot_hrg`, `hrg_brg`, `status_brg`) VALUES
-(4, 'AO18', '0000-00-00 00:00:00', 'Kompor', 'Kantor Kas Gang Besen', 5, '', 0, 1900000, 'Penyusutan'),
-(7, 'KOP89', '2019-06-28 17:00:00', 'kursi', 'mijen', 70, '', 0, 90000, 'aktif'),
-(14, 'lk0', '2019-10-23 17:00:00', 'hp', 'smg walter mangonsidi', 900, 'pack', 0, 8000, 'Aktif'),
 (15, 'KP8', '2019-10-17 17:00:00', 'Pulpen', 'kds1 cbg kudus', 100, 'pcs', 350000, 3500, 'Aktif'),
 (16, 'AH254', '2019-10-24 17:00:00', 'ff', 'Kantor Kas Cepiring', 6, 'pcs', 36000, 6000, 'Aktif'),
 (17, 'A205', '2019-10-31 16:48:30', 'hhhhg', 'Kantor Kas Ngaliyan', 2, 'pcs', 10000, 5000, 'Aktif');
@@ -98,10 +95,8 @@ CREATE TABLE `pengajuan_brg` (
 --
 
 INSERT INTO `pengajuan_brg` (`id_pengajuan`, `tgl_pengajuan`, `nm_brg_pgj`, `nm_kantor_pgj`, `jml_brg_pgj`, `sat_brg_pgj`, `hrg_brg_pgj`, `tot_hrg_pgj`, `ket_pgj`, `notif_pgj`) VALUES
-(7, '2019-10-13 17:00:00', 'Pulpen', 'Kantor kas Kudus', 100, 'pack', 2000, 200000, 'edisi terbaru', ''),
-(8, '2019-11-01 11:20:23', '', '', 0, '', 0, 0, '', 'terima'),
-(9, '2019-11-02 05:51:33', '', '', 0, '', 0, 0, '', 'terima'),
-(10, '2019-11-02 05:53:51', 'uuuuu', 'Kantor Kas Ketileng', 90, 'unit', 8000000, 720000000, 'ryrytfhg', 'terima');
+(7, '2019-10-13 17:00:00', 'Pulpen', 'Kantor kas Kudus', 100, 'pack', 2000, 200000, 'edisi terbaru', 'Terima'),
+(10, '2019-11-02 05:53:51', 'uuuuu', 'Kantor Kas Ketileng', 90, 'unit', 8000000, 720000000, 'ryrytfhg', 'Tolak');
 
 --
 -- Indexes for dumped tables

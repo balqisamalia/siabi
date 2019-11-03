@@ -69,18 +69,17 @@
 										<td><?php echo $data['tot_hrg_pgj']?></td>
 										<td>
 											 <script type="text/javascript">
-											 	function cek(){
+											 	function cek(id){
 											 	var msg = confirm("Verifikasi Data");
 											 	if(msg==true){
-											 		window.location="print_data.php";  
-											 	}else{
-											 		window.location="index_pengajuan.php";
+											 		window.location="proses_pengajuan.php?id_pengajuan="+ id +"&action=Terima"
+											 		console.log("true")  
 											 	}
 											 }
 											</script>
-											<a href="view_pengajuan.php?id_pengajuan=<?php echo $data['id_pengajuan']?>" class="btn btn-info btn-xs"><i "></i>View </a>
-											<a href="view_pengajuan.php?id_pengajuan=<?php echo $data['id_pengajuan']?>" onclick="cek();" class="btn btn-info btn-xs"><i "></i>Konfirmasi </a>
-											<a href="hapus_pengajuan.php?id_pengajuan=<?php echo $data['id_pengajuan']?>" class="btn btn-danger btn-xs"><i class="glyphicon "></i> Tolak</a>
+											<a href="proses_pengajuan.php?id_pengajuan=<?php echo $data['id_pengajuan']?>&action=view" class="btn btn-info btn-xs"><i "></i>View </a>
+											<a onclick="cek(<?php echo $data['id_pengajuan']?>);" class="btn btn-info btn-xs"><i "></i>Konfirmasi </a>
+											<a href="proses_pengajuan.php?id_pengajuan=<?php echo $data['id_pengajuan']?>&action=Tolak" class="btn btn-danger btn-xs"><i class="glyphicon "></i> Tolak</a>
 										</td>
 									</tr>
 								</tbody>

@@ -2,56 +2,56 @@
     include('../koneksi/koneksi.php');
 
     $angka=1;
+    
 ?>
 
 
 <html>
     <body>
-        <table class="table table-stripped" width="100%">
-                                    <tr>
-                                            <th>Nama Barang</th>
-                                            <td><?php echo $nm_brg; ?> </td>
-                                    </tr>
+        <table width="100%" >
+            <tr>
+        <td align="right"><img src="icon.jpg" width="50%"></td>
+        <td align="center"><h3>PT BANK PERKREDITAN RAKYAT WELERI MAKMUR</h3><p>
+        <h4>KANTOR PUSAT SEMARANG</h4>Jl. Majapahit, Ruko Gayamsari No.17-20 Semarang Telp. (024) 673325</td>
+        </tr>
+        </table><hr color="black" size="5px"><br><br>
+        <center><h2>DATA BARANG</h2></center>
+            <table border="1" width="100%">
+            <tr>
+                <td align="center"><b>Kode Barang</b></td>
+                <td align="center"><b>Nama Barang</b></td>
+                <td align="center"><b>Nama Kantor</b></td>
+                <td align="center"><b>Jumlah Barang</b></td>
+                <td align="center"><b>Harga Barang</b></td>
+                <td align="center"><b>Status Barang</b></td>
+            </tr>
 
-                                    <tr>
-                                            <th>Tanggal Pengajuan</th>
-                                            <td><?php echo $tgl_pengajuan; ?> </td>
-                                    </tr>
-                                    <tr>
-                                            <th>Kantor</th>
-                                            <td><?php echo $nm_kantor; ?> </td>
-                                    </tr>
-                                    <tr>
-                                            <th>Jumlah</th>
-                                            <td><?php echo $jml_brg; ?> / <?php echo $sat_brg; ?> </td>
-                                    </tr>    
-                                    <tr>
-                                            <th>Total Harga</th>
-                                            <td><b>Rp</b> <?php echo $tot_hrg; ?> </td>
-                                    </tr>
-                                     <tr>
-                                            <th>Keterangan</th>
-                                            <td><?php echo $ket; ?> </td>
-                                    </tr>
-                                    </table>
             <?php
               
-              $lihat = mysqli_query($connect, "select * from pengajuan_brg where id_pengajuan");
+              $lihat = mysqli_query($connect, "select * from pengajuan_brg");
               
                     while($row = mysqli_fetch_assoc($lihat)){
                         echo "      
                             <tr>
-                                <td>$row[id_pengajuan]</td>
-                                
+                                <td>$row[tgl_pengajuan]</td>
+                                <td>$row[nm_brg_pgj]</td>
+                                <td>$row[nm_kantor_pgj]</td>
+                                <td>$row[jml_brg_pgj]</td>
+                                <td>$row[hrg_brg_pgj]</td>
+                                <td>$row[notif_pgj]</td>
                             </tr>
                         ";
                     }
             ?>
           </tbody>
           </table> 
-          
-          </center>
-          
+          </center><br><br>
+          <table width="100%">
+            <tr>
+          <td><p align="center">Hormat Kami,<br><br><br><br><br><br> HRD</td>
+          <td><p align="center">Mengetahui,<br><br><br><br><br><br> Kabag.Umum</td>
+        </tr>
+        </table>
           <script>
             window.load = print_d();
             function print_d(){
