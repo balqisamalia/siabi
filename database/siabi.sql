@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 01 Nov 2019 pada 13.47
--- Versi server: 10.1.38-MariaDB
--- Versi PHP: 7.1.27
+-- Waktu pembuatan: 03 Nov 2019 pada 02.39
+-- Versi server: 10.1.37-MariaDB
+-- Versi PHP: 7.3.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -56,18 +56,6 @@ INSERT INTO `barang` (`id_brg`, `kode_brg`, `tgl_msk`, `nm_brg`, `nm_kantor`, `j
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kode`
---
-
-CREATE TABLE `kode` (
-  `id` int(11) NOT NULL,
-  `kode_brg` varchar(20) NOT NULL,
-  `nm_brg` int(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Struktur dari tabel `login`
 --
 
@@ -111,7 +99,9 @@ CREATE TABLE `pengajuan_brg` (
 
 INSERT INTO `pengajuan_brg` (`id_pengajuan`, `tgl_pengajuan`, `nm_brg_pgj`, `nm_kantor_pgj`, `jml_brg_pgj`, `sat_brg_pgj`, `hrg_brg_pgj`, `tot_hrg_pgj`, `ket_pgj`, `notif_pgj`) VALUES
 (7, '2019-10-13 17:00:00', 'Pulpen', 'Kantor kas Kudus', 100, 'pack', 2000, 200000, 'edisi terbaru', ''),
-(8, '2019-11-01 11:20:23', '', '', 0, '', 0, 0, '', '');
+(8, '2019-11-01 11:20:23', '', '', 0, '', 0, 0, '', 'terima'),
+(9, '2019-11-02 05:51:33', '', '', 0, '', 0, 0, '', 'terima'),
+(10, '2019-11-02 05:53:51', 'uuuuu', 'Kantor Kas Ketileng', 90, 'unit', 8000000, 720000000, 'ryrytfhg', 'terima');
 
 --
 -- Indexes for dumped tables
@@ -122,12 +112,6 @@ INSERT INTO `pengajuan_brg` (`id_pengajuan`, `tgl_pengajuan`, `nm_brg_pgj`, `nm_
 --
 ALTER TABLE `barang`
   ADD PRIMARY KEY (`id_brg`);
-
---
--- Indeks untuk tabel `kode`
---
-ALTER TABLE `kode`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indeks untuk tabel `login`
@@ -152,12 +136,6 @@ ALTER TABLE `barang`
   MODIFY `id_brg` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- AUTO_INCREMENT untuk tabel `kode`
---
-ALTER TABLE `kode`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT untuk tabel `login`
 --
 ALTER TABLE `login`
@@ -167,7 +145,7 @@ ALTER TABLE `login`
 -- AUTO_INCREMENT untuk tabel `pengajuan_brg`
 --
 ALTER TABLE `pengajuan_brg`
-  MODIFY `id_pengajuan` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_pengajuan` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
