@@ -1,3 +1,11 @@
+<?php 
+session_start();
+if(isset($_SESSION['level']) == 'hrd'){
+header("location:hrd/index_pengajuan_hrd.php");
+}else if(isset($_SESSION['level']) =='admin'){
+header("location:admin/index_data.php");
+}
+?>
 
 <!DOCTYPE html>
 <html>
@@ -13,7 +21,7 @@
 <body>
 	<div class="main">
 		<!---start-main-->
-		<div class="login">
+		<div class="Masuk">
 			<div class="inset">
 				<form action="cek_log.php" method="POST">
 			        <div>
@@ -27,7 +35,7 @@
 					<hr>
 					<div class="sign">
 						<div class="submit">
-						  <input type="submit" value="LOGIN" >
+						  <input type="submit" value="Masuk">
 						</div>
 						<div class="clear"> </div>
 					</div>

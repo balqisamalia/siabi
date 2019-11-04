@@ -11,14 +11,13 @@ $status_brg	= $_POST['status_brg'];
 
 
 
-$input		= mysqli_query($connect, "INSERT INTO barang (nm_brg_pgj, nm_kantor_pgj, jml_brg_pgj, sat_brg_pgj, hrg_brg_pgj, tot_hrg_pgj, sat_brg_pgj ) VALUES ('$nm_brg'_pgj, '$nm_kantor_pgj', 
-	'$jml_brg_pgj' , '$sat_brg_pgj' , '$hrg_brg_pgj',$tot_hrg_pgj, '$sat_brg_pgj')");
+$input		= mysqli_query($connect, "INSERT INTO barang (kode_brg, nm_brg, nm_kantor, jml_brg, sat_brg, hrg_brg, tot_hrg, status_brg ) VALUES ('$kode_brg', '$nm_brg', '$nm_kantor', '$jml_brg' , '$sat_brg' , '$hrg_brg', '$tot_hrg', '$status_brg')");
 
 if($input){
 	echo "<script>alert('Data Berhasil Ditambah');document.location.href='index_data.php'</script>";
 		
-}else{
-	echo "<script>alert('Data Gagal Ditambah');document.location.href='tambah.php'</script>";
+	}else{
+		echo "<script>alert('Data Gagal Ditambah');document.location.href='tambah.php'</script>";
 		
 }
 ?>

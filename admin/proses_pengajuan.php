@@ -14,10 +14,10 @@ $input		= mysqli_query($connect, "INSERT INTO pengajuan_brg (nm_brg_pgj, nm_kant
 	'$jml_brg_pgj' , '$sat_brg_pgj' , '$hrg_brg_pgj','$tot_hrg_pgj', '$ket_pgj')");
 
 if($input){
-	echo "<script>alert('Data Berhasil Ditambah');document.location.href='index_pengajuan.php'</script>";
+	echo "<script>alert('Data Diajukan');document.location.href='index_pengajuan.php'</script>";
 		
 }else{
-	echo "<script>alert('Data Gagal Ditambah');document.location.href='pengajuan.php'</script>";
+	echo "<script>alert('Data Gagal Diajukan');document.location.href='pengajuan.php'</script>";
 		
 }
 ?>

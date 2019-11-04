@@ -77,7 +77,7 @@
 											 	}
 											 }
 											</script>
-											<a href="proses_pengajuan.php?id_pengajuan=<?php echo $data['id_pengajuan']?>&action=view" class="btn btn-info btn-xs"><i "></i>View </a>
+											<a href="../admin/view_pengajuan.php" class="btn btn-info btn-xs"><i "></i>View </a>
 											<a onclick="cek(<?php echo $data['id_pengajuan']?>);" class="btn btn-info btn-xs"><i "></i>Konfirmasi </a>
 											<a href="proses_pengajuan.php?id_pengajuan=<?php echo $data['id_pengajuan']?>&action=Tolak" class="btn btn-danger btn-xs"><i class="glyphicon "></i> Tolak</a>
 										</td>
