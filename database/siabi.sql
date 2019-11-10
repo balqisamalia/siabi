@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 03 Nov 2019 pada 04.41
+-- Waktu pembuatan: 04 Nov 2019 pada 08.37
 -- Versi server: 10.1.37-MariaDB
 -- Versi PHP: 7.3.1
 
@@ -46,9 +46,10 @@ CREATE TABLE `barang` (
 --
 
 INSERT INTO `barang` (`id_brg`, `kode_brg`, `tgl_msk`, `nm_brg`, `nm_kantor`, `jml_brg`, `sat_brg`, `tot_hrg`, `hrg_brg`, `status_brg`) VALUES
-(15, 'KP8', '2019-10-17 17:00:00', 'Pulpen', 'kds1 cbg kudus', 100, 'pcs', 350000, 3500, 'Aktif'),
+(15, 'KPPP', '2019-10-17 17:00:00', 'Pulpen', 'Kantor Pusat Semarang', 100, 'pcs', 350000, 3500, 'Aktif'),
 (16, 'AH254', '2019-10-24 17:00:00', 'ff', 'Kantor Kas Cepiring', 6, 'pcs', 36000, 6000, 'Aktif'),
-(17, 'A205', '2019-10-31 16:48:30', 'hhhhg', 'Kantor Kas Ngaliyan', 2, 'pcs', 10000, 5000, 'Aktif');
+(17, 'A205', '2019-10-31 16:48:30', 'hhhhg', 'Kantor Kas Ngaliyan', 2, 'pcs', 10000, 5000, 'Aktif'),
+(24, 'A1OR2', '2019-11-04 05:00:14', 'tv', 'Kantor Kas Klaten', 8, 'unit', 72000, 9000, 'Aktif');
 
 -- --------------------------------------------------------
 
@@ -87,7 +88,7 @@ CREATE TABLE `pengajuan_brg` (
   `hrg_brg_pgj` int(20) NOT NULL,
   `tot_hrg_pgj` int(100) NOT NULL,
   `ket_pgj` text NOT NULL,
-  `notif_pgj` varchar(100) NOT NULL DEFAULT 'prosess'
+  `notif_pgj` varchar(100) NOT NULL DEFAULT 'Proses'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -96,7 +97,8 @@ CREATE TABLE `pengajuan_brg` (
 
 INSERT INTO `pengajuan_brg` (`id_pengajuan`, `tgl_pengajuan`, `nm_brg_pgj`, `nm_kantor_pgj`, `jml_brg_pgj`, `sat_brg_pgj`, `hrg_brg_pgj`, `tot_hrg_pgj`, `ket_pgj`, `notif_pgj`) VALUES
 (7, '2019-10-13 17:00:00', 'Pulpen', 'Kantor kas Kudus', 100, 'pack', 2000, 200000, 'edisi terbaru', 'Terima'),
-(10, '2019-11-02 05:53:51', 'uuuuu', 'Kantor Kas Ketileng', 90, 'unit', 8000000, 720000000, 'ryrytfhg', 'Tolak');
+(10, '2019-11-02 05:53:51', 'uuuuu', 'Kantor Kas Ketileng', 90, 'unit', 8000000, 720000000, 'ryrytfhg', 'Tolak'),
+(11, '2019-11-04 05:06:59', 'uuuuu', 'Kantor Cabang Kendal', 1, 'unit', 10000, 10000, '', 'view');
 
 --
 -- Indexes for dumped tables
@@ -128,7 +130,7 @@ ALTER TABLE `pengajuan_brg`
 -- AUTO_INCREMENT untuk tabel `barang`
 --
 ALTER TABLE `barang`
-  MODIFY `id_brg` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_brg` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT untuk tabel `login`
@@ -140,7 +142,7 @@ ALTER TABLE `login`
 -- AUTO_INCREMENT untuk tabel `pengajuan_brg`
 --
 ALTER TABLE `pengajuan_brg`
-  MODIFY `id_pengajuan` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_pengajuan` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

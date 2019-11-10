@@ -28,7 +28,7 @@
 				</form>
 				<div class="col-md-8 col-md-offset-2">
 					<!-- Belum bisa -->
-				<form action="proses_search.php" method="get">
+				<form action="proses_search_pgj.php" method="get">
 					<input type="search" name="cari" placeholder="Nama Barang" >
 					<button action="proses_search.php" type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-search" value="Cari"  ></i> Cari</button>
  				</form>

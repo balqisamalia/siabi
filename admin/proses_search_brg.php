@@ -20,7 +20,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav">
                 <li><a href="index_data.php">Data Barang <span class="sr-only">(current)</span></a></li>
-                <li><a href="index_pengajuan.php">Pengajuan</a></li>
+                <li><a href="index_pengajuan.php">Data Pengajuan</a></li>
                 <li><a href="logout.php">Logout</a></li>
                 <li></li>
               </ul>
@@ -34,16 +34,19 @@
         </form>
         <div class="col-md-8 col-md-offset-2">       
           <form action="proses_search.php" method="get">
-          <input type="search" name="cari" placeholder="Nama Barang" >
+          <input type="search" name="cari" placeholder="Cari" >
           <button action="proses_search.php" type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-search" value="Cari"  ></i> Cari</button>
         </form>
-<?php 
-include 'koneksi.php';
-if(isset($_GET['cari'])){
-  $cari = $_GET['cari'];
-  echo "<b>Hasil pencarian : ".$cari."</b>";
-}
-?>
+
+
+        <?php 
+        include 'koneksi.php';
+        if(isset($_GET['cari'])){
+          $cari = $_GET['cari'];
+          echo "<b>Hasil pencarian : ".$cari."</b>";
+        }
+        ?>
+        
           <br>
           <br>
           <div class="panel panel-default">
@@ -65,36 +68,39 @@ if(isset($_GET['cari'])){
                     <th>Opsi</th>
                   </tr>
                 </thead>
-<?php  
-  if(isset($_GET['cari'])){
-    $cari = $_GET['cari'];
-    $lihat = mysqli_query($connect,"SELECT * FROM barang WHERE nm_brg like '%".$cari."%'");       
-  }else{
-    $lihat = mysqli_query($connect,"SELECT * FROM barang");
 
-  }
-  $no = 1;
-  while($data = mysqli_fetch_array($lihat)){
-?>
+                <?php  
+                $lihat = '';
+                if(isset($_GET['cari'])) {
+                  $cari = $_GET['cari'];
+                  $lihat = mysqli_query($connect,"SELECT * FROM barang WHERE tgl_msk like '%".$cari."%' OR nm_kantor like '%".$cari."%'");
+                }
+                $no = 1;
+                while ($data = mysqli_fetch_array($lihat)) {
+                  ?>
+
                 <tbody>
                   <tr>
                     <td><?php echo $no;?></td>
                     <td><?php echo $data['kode_brg']?></td>
-                    <td><?php echo $data['tgl_msk']?></td>
+                    <td><?php echo date("d/m/Y", strtotime($data['tgl_msk']))?></td>
                     <td><?php echo $data['nm_brg']?></td>
                     <td><?php echo $data['nm_kantor']?></td>
                     <td><?php echo $data['jml_brg']?></td>
                     <td><?php echo $data['hrg_brg']?></td>
                     <td><?php echo $data['status_brg']?></td>
                     <td>
+                      <a href="view_barang.php?id_brg=<?php echo $data['id_brg']?>" class="btn btn-info btn-xs"><i "></i>View </a>
                       <a href="edit.php?id_brg=<?php echo $data['id_brg']?>" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-pencil"></i> Edit</a>
-                      <a href="cetak.php?id_brg=<?php echo $data['id_brg']?>" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-print"></i> Print</a>
                       <a href="proses_hapus.php?id_brg=<?php echo $data['id_brg']?>" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-erase"></i> Hapus</a>
                     </td>
                   </tr>
                 </tbody>
-                <?php $no++;}?>
+                <?php $no++;
+              }
+                ?>
               </table>
+              <button onclick="history.back(-1)"><i class="glyphicon glyphicon-arrow-left"></i> Kembali</a></button>
             </div>
           </div>
         </div>

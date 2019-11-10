@@ -53,7 +53,7 @@ $kota = mysqli_fetch_array($firstResult)[0];
 							<form action="proses_tambah.php" method="POST" class="form">
 								<div class="form-group">
 									<label class="title">Kode Barang</label>
-									<input type="text" name="kode_brg" class="form-control" placeholder="BP10">
+									<input type="text" name="kode_brg" class="form-control" value="<?php echo round(microtime(true)*1000);?>">
 								</div>
 								<div class="form-group">
 									<label class="title">Nama Barang</label>

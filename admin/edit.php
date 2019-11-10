@@ -1,3 +1,13 @@
+<?php
+
+
+include 'koneksi.php';
+$result = mysqli_query($connect, "SELECT * FROM nama_kantor group by kota");
+$firstResult = mysqli_query($connect, "SELECT kota FROM nama_kantor order by kota LIMIT 1");
+$kota = mysqli_fetch_array($firstResult)[0];
+
+?>
+
 <html>
 <head>
 	<title>Data Barang Iventaris BPR</title>
@@ -59,12 +69,14 @@
 									<label class="title">Kota</label>
 									<select data-placeholder="Pilih Kota" name="nm_kota" class="form-control" onchange="getKantor(this.value);">
 										<?php 
-											while($kantor = mysqli_fetch_array($data)){
+											while($kantor = mysqli_fetch_array($result)){
 												echo "<option value = '".$kantor["kota"]."'>".$kantor["kota"]."</option>";
 										}
 										?>
 
 									</select>
+								</div>
+								<div class="form-group">
 									<label class="title">Nama Kantor</label>
 									<select data-placeholder="Nama Kantor.." name="nm_kantor" class="form-control" id="selectKantor">
 

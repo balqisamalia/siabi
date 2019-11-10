@@ -68,6 +68,7 @@
 										<td><?php echo $data['jml_brg_pgj']?></td>
 										<td><?php echo $data['tot_hrg_pgj']?></td>
 										<td>
+
 											 <script type="text/javascript">
 											 	function cek(id){
 											 	var msg = confirm("Verifikasi Data");
@@ -78,12 +79,26 @@
 											 }
 											</script>
 											<a href="../admin/view_pengajuan.php" class="btn btn-info btn-xs"><i "></i>View </a>
-											<a onclick="cek(<?php echo $data['id_pengajuan']?>);" class="btn btn-info btn-xs"><i "></i>Konfirmasi </a>
-											<a href="proses_pengajuan.php?id_pengajuan=<?php echo $data['id_pengajuan']?>&action=Tolak" class="btn btn-danger btn-xs"><i class="glyphicon "></i> Tolak</a>
+											 <!--<?php
+											 	//if($data['notif_pgj'] !="Terima") {
+											 ?>-->
+											 <?php
+											 if($data['notif_pgj'] == 'proses')
+											 {?>
+											 
+											 	<a onclick="cek(<?php echo $data['id_pengajuan']?>);" class="btn btn-info btn-xs"><i "></i>Konfirmasi </a>
+											 	<a href="proses_pengajuan.php?id_pengajuan=<?php echo $data['id_pengajuan']?>&action=Tolak" class="btn btn-danger btn-xs"><i class="glyphicon "></i> Tolak</a>
+
+											 <?php }
+
+											 ?>
+							
+											
+											<!--<?php } ?>-->
 										</td>
 									</tr>
 								</tbody>
-								<?php $no++;}}?>
+								<?php $no++;}?>
 							</table>
 						</div>
 					</div>

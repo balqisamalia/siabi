@@ -1,12 +1,11 @@
 <?php 
 session_start();
 if(isset($_SESSION['level']) == 'hrd'){
-header("location:hrd/index_pengajuan_hrd.php");
+	header("location:hrd/index_pengajuan_hrd.php");
 }else if(isset($_SESSION['level']) =='admin'){
-header("location:admin/index_data.php");
+	header("location:admin/index_data.php");
 }
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>

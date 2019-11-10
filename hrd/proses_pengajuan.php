@@ -3,15 +3,19 @@ include 'koneksi.php';
 
 
 $id 		= $_GET['id_pengajuan'];
-$action		= $_GET['action'];
+$action		= $_GET['action']; //isi action adalah url
 
-$input = mysqli_query($connect, "UPDATE pengajuan_brg SET notif_pgj='$action' WHERE id_pengajuan=$id");
-if($action){
-	echo "<script>alert('Pengajuan Di Terima');document.location.href='index_pengajuan_hrd.php'</script>";
-		
-}else{
-	echo "<script>alert('pengajuan Ditolak');document.location.href='index.php'</script>";
-		
-}
 
-?>
+//isi action == Terima adalah Terima
+if($action == 'Terima') 
+{
+	$input = mysqli_query($connect, "UPDATE pengajuan_brg SET notif_pgj='$action' WHERE id_pengajuan=$id");
+	header("location: index_pengajuan_hrd.php");
+
+}elseif($action == 'Tolak') {
+	$input = mysqli_query($connect, "UPDATE pengajuan_brg SET notif_pgj='$action' WHERE id_pengajuan=$id");
+	//$input = mysqli_query($connect, "DELETE FROM pengajuan_brg WHERE id_pengajuan='$id'"); --> hapus pengajuan
+	header("location: index_pengajuan_hrd.php");
+
+	
+}?>
