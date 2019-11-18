@@ -22,8 +22,8 @@
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="index_data.php">Data Barang <span class="sr-only">(current)</span></a></li>
-            <li><a href="index_pengajuan.php">Data Pengajuan</a></li>
+            <li class="active"><a href="index_barang_hrd.php">Data Barang <span class="sr-only">(current)</span></a></li>
+            <li><a href="index_pengajuan_hrd.php">Data Pengajuan</a></li>
             <li><a href="logout.php">Logout</a></li>
             <li></li>
           </ul>
@@ -53,13 +53,13 @@
 
 								$lihat = mysqli_query($connect,"SELECT * FROM barang WHERE tgl_msk like '%".$date."%' OR nm_kantor like '%".$cari."%' OR nm_brg like '%".$cari."%'");
                 }
+
                 
 								if(isset($_GET['cari'])){
                   $cari = $_GET['cari'];
                   echo "<b>Hasil pencarian : ".$cari."</b>";      
 								}
-
-                  if(mysqli_fetch_array($lihat) == null){
+                if(mysqli_fetch_array($lihat) == null){
                   echo " <b>tidak di temukan</b>";
                 }else{
                   $lihat = mysqli_query($connect,"SELECT * FROM barang WHERE tgl_msk like '%".$date."%' OR nm_kantor like '%".$cari."%' OR nm_brg like '%".$cari."%'");
@@ -105,10 +105,6 @@
                       <td><?php echo $data['status_brg']?></td>
                       <td>
                         <a href="view_barang.php?id_brg=<?php echo $data['id_brg']?>" class="btn btn-info btn-xs"><i "></i>View </a>
-                      <a href=" edit.php?id_brg=<?php echo $data['id_brg']?>" class="btn btn-info btn-xs"><i
-                              class="glyphicon glyphicon-pencil"></i> Edit</a>
-                        <a href="proses_hapus.php?id_brg=<?php echo $data['id_brg']?>" class="btn btn-danger btn-xs"><i
-                            class="glyphicon glyphicon-erase"></i> Hapus</a>
                       </td>
                     </tr>
                   </tbody>

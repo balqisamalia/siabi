@@ -33,7 +33,7 @@ $kota = mysqli_fetch_array($firstResult)[0];
               <ul class="nav navbar-nav">
                 <li class="active"><a href="index_data.php">Data Barang <span class="sr-only">(current)</span></a></li>
                 <li><a href="index_pengajuan.php">Data Pengajuan</a></li>
-                <li><a href="../logout.php">Logout</a></li>
+                <li><a href="../logout.php">Keluar</a></li>
                 <li></li>
               </ul>
             </div>

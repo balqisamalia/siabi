@@ -11,7 +11,7 @@ $status_brg	= $_POST['status_brg'];
 
 
 
-$input		= mysqli_query($connect, "INSERT INTO barang (kode_brg, nm_brg, nm_kantor, jml_brg, sat_brg, hrg_brg, tot_hrg, status_brg ) VALUES ('$kode_brg', '$nm_brg', '$nm_kantor', '$jml_brg' , '$sat_brg' , '$hrg_brg', '$tot_hrg', '$status_brg')");
+$input = mysqli_query($connect, "INSERT INTO barang (kode_brg, nm_brg, nm_kantor, jml_brg, sat_brg, hrg_brg, tot_hrg, status_brg ) VALUES ('$kode_brg', '$nm_brg', '$nm_kantor', '$jml_brg' , '$sat_brg' , '$hrg_brg', '$tot_hrg', '$status_brg')");
 
 if($input){
 	echo "<script>alert('Data Berhasil Ditambah');document.location.href='index_data.php'</script>";

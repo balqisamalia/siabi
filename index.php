@@ -9,6 +9,7 @@ if(isset($_SESSION['level']) == 'hrd'){
 <!DOCTYPE html>
 <html>
 <head>
+<title src="assets/css/logo.png">SIABI</title>
 <link rel="icon" type="image/jpg" href="assets/icon.jpg">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">

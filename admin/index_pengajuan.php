@@ -16,7 +16,7 @@
               <ul class="nav navbar-nav">
                <li><a href="index_data.php">Data Barang </a></li>
                 <li class="active"><a href="index_pengajuan.php">Data Pengajuan <span class="sr-only">(current)</span></a></li>
-                <li><a href="../logout.php">Logout</a></li>
+                <li><a href="../logout.php">Keluar</a></li>
                 <li></li>
               </ul>
             </div>
@@ -29,8 +29,8 @@
 				<div class="col-md-8 col-md-offset-2">
 					<!-- Belum bisa -->
 				<form action="proses_search_pgj.php" method="get">
-					<input type="search" name="cari" placeholder="Nama Barang" >
-					<button action="proses_search.php" type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-search" value="Cari"  ></i> Cari</button>
+					<input type="search" name="cari" placeholder="Cari" >
+					<button action="proses_search_pgj.php" type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-search" value="Cari"  ></i> Cari</button>
  				</form>
  				<a href="pengajuan.php" class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i> Pengajuan</a>
 					<br>

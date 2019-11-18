@@ -64,7 +64,7 @@
                                             <td><?php echo $tgl_msk; ?> </td>
                                     </tr>
                                     <tr>
-                                    		<th>Nama Kantor</th>
+                                    		<th>Kantor</th>
                                             <td><?php echo $nm_kantor; ?> </td>
                                     </tr>
 
@@ -79,7 +79,7 @@
                                     </tr>
 
                                     <tr>
-                                    		<th>Total Harga</th>
+                                    		<th>Total</th>
                                             <td><?php echo $tot_hrg; ?> </td>
                                     </tr>
                                     <tr>

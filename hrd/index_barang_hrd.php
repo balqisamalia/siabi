@@ -16,7 +16,7 @@
               <ul class="nav navbar-nav">
                 <li class="active"><a href="index_barang_hrd.php">Data Barang <span class="sr-only">(current)</span></a></li>
                 <li><a href="index_pengajuan_hrd.php">Data Pengajuan</a></li>
-                <li><a href="../logout.php">Logout</a></li>
+                <li><a href="../logout.php">Keluar</a></li>
                 <li></li>
               </ul>
             </div>
@@ -26,9 +26,9 @@
 	<div class="row">
 		<div class="container-fuild">
 				<div class="col-md-9 col-md-offset-2">
-					<form action="proses_search.php" method="get">
+					<form action="proses_search_brg.php" method="get">
 					<input type="search" name="cari" placeholder="Nama Barang" >
-					<button action="proses_search.php" type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-search" value="Cari"  ></i> Cari</button>
+					<button action="proses_search_brg.php" type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-search" value="Cari"  ></i> Cari</button>
  				</form>
 				<br>
 					<br><div class="panel panel-default">
@@ -71,19 +71,12 @@
 										<td><?php echo $data['tot_hrg']?></td>
 										<td><?php echo $data['status_brg']?></td>
 										<td>
-											<a href="../admin/view_barang.php?id_brg=<?php echo $data['id_brg']?>" class="btn btn-info btn-xs"><i "></i>View </a>
+											<a href="view_barang.php?id_brg=<?php echo $data['id_brg']?>" class="btn btn-info btn-xs"><i "></i>View </a>
 										</td>
 									</tr>
 								</tbody>
 								<?php $no++;}}?>
 							</table>
-								<button onClick="print_data()" class="btn btn-info">Print</button>
-								
-								<script>
-									function print_data(){
-										window.open("../admin/cetak.php","_blank");
-									}
-								</script>
 						</div>
 					</div>
 				</div>

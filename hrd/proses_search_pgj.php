@@ -14,8 +14,8 @@
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav">
-               <li><a href="index_data.php">Data Barang </a></li>
-                <li class="active"><a href="index_pengajuan.php">Data Pengajuan <span class="sr-only">(current)</span></a></li>
+               <li><a href="index_barang_hrd.php">Data Barang </a></li>
+                <li class="active"><a href="index_pengajuan_hrd.php">Data Pengajuan <span class="sr-only">(current)</span></a></li>
                 <li><a href="../logout.php">Logout</a></li>
                 <li></li>
               </ul>
@@ -76,7 +76,7 @@
                     <th>Kantor</th>
                     <th>Jumlah</th>
                     <th>Harga</th>
-                    <th>Notifikasi</th>
+                    <th>Opsi</th>
                   </tr>
                 </thead>
 
@@ -93,8 +93,8 @@
                     <td><?php echo $data['nm_kantor_pgj']?></td>
                     <td><?php echo $data['jml_brg_pgj']?></td>
                     <td><?php echo $data['hrg_brg_pgj']?></td>
-                    <td><?php echo $data['notif_pgj']?></td>
                     <td>
+                      <a href="view_pengajuan.php?id_pengajuan=<?php echo $data['id_pengajuan']?>" class="btn btn-info btn-xs"><i "></i>View </a>
                   </tr>
                 </tbody>
                 <?php $no++;
